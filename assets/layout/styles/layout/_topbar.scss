@@ -1,0 +1,93 @@
+.layout-topbar {
+    position: fixed;
+    height: 5rem;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: var(--surface-card);
+    transition: left $transitionDuration;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye ítems entre los extremos */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.02), 0 0 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.layout-topbar-logo {
+    display: flex;
+    align-items: center;
+    color: var(--surface-900);
+    font-size: 1.2rem; /* Tamaño fijo del texto */
+    font-weight: 500;
+    width: auto;
+    text-decoration: none;
+    position: absolute; /* Centra el logo */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.layout-topbar-logo img {
+    height: 3rem; /* Tamaño fijo del logo */
+    width: auto;
+    margin-right: 0; /* Espaciado entre logo y texto */
+    object-fit: contain;
+}
+
+.layout-topbar-logo span {
+    white-space: nowrap; /* Evita división del texto */
+}
+
+/* Botón de menú hamburguesa */
+.layout-menu-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: var(--text-color-secondary);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: background-color $transitionDuration;
+    margin-left: 0; /* Posicionado a la izquierda */
+}
+
+.layout-menu-button i {
+    font-size: 1.5rem;
+}
+
+/* Responsivo para pantallas medianas y pequeñas */
+@media (max-width: 991px) {
+    .layout-topbar {
+        padding: 0 1rem; /* Reduce espaciado lateral */
+        justify-content: flex-start; /* Asegura que el ícono del menú esté alineado a la izquierda */
+    }
+
+    .layout-topbar-logo {
+        font-size: 1.2rem; /* Mantén el tamaño del texto */
+    }
+
+    .layout-menu-button {
+        margin-left: 0; /* Ícono del menú completamente a la izquierda */
+    }
+}
+
+@media (max-width: 576px) {
+    .layout-topbar {
+        height: 4rem; /* Ajusta la altura del topbar */
+    }
+
+    .layout-topbar-logo {
+        font-size: 1.2rem; /* Mantén el tamaño del texto */
+    }
+
+    .layout-menu-button {
+        width: 2.5rem;
+        height: 2.5rem; /* Botón más pequeño en pantallas muy pequeñas */
+    }
+
+    .layout-menu-button i {
+        font-size: 1.2rem; /* Ícono ligeramente más pequeño */
+    }
+}
